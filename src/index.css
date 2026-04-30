@@ -2,95 +2,84 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Örebro Plåtslageri – Industriellt designsystem.
+   Färger: stål/mörkgrå med varm orange accent. Alla färger i HSL. */
 
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 220 25% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 25% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 25% 12%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Stål/mörkgrå */
+    --primary: 215 28% 17%;
+    --primary-foreground: 210 20% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Ljus stålgrå */
+    --secondary: 215 16% 92%;
+    --secondary-foreground: 215 28% 17%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 215 16% 95%;
+    --muted-foreground: 215 14% 40%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Varm orange accent (industriell) */
+    --accent: 22 92% 52%;
+    --accent-foreground: 0 0% 100%;
+    --accent-hover: 22 92% 46%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 84% 50%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 215 16% 88%;
+    --input: 215 16% 88%;
+    --ring: 22 92% 52%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
+    /* Industriella tokens */
+    --steel-50: 215 20% 97%;
+    --steel-100: 215 18% 92%;
+    --steel-200: 215 16% 82%;
+    --steel-500: 215 14% 45%;
+    --steel-700: 215 22% 22%;
+    --steel-900: 215 28% 12%;
 
-    --sidebar-foreground: 240 5.3% 26.1%;
+    --gradient-hero: linear-gradient(135deg, hsl(215 30% 10% / 0.85), hsl(215 28% 17% / 0.6));
+    --gradient-steel: linear-gradient(180deg, hsl(var(--steel-700)), hsl(var(--steel-900)));
+    --gradient-accent: linear-gradient(135deg, hsl(22 92% 55%), hsl(15 88% 48%));
 
-    --sidebar-primary: 240 5.9% 10%;
+    --shadow-sm: 0 1px 2px hsl(215 28% 12% / 0.06);
+    --shadow-md: 0 8px 24px -8px hsl(215 28% 12% / 0.18);
+    --shadow-lg: 0 24px 50px -16px hsl(215 28% 12% / 0.30);
+    --shadow-accent: 0 12px 30px -10px hsl(22 92% 52% / 0.45);
 
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --transition-base: 200ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  /* Dark mode behålls men är inte primärt fokus */
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --background: 215 28% 8%;
+    --foreground: 210 20% 96%;
+    --card: 215 28% 10%;
+    --card-foreground: 210 20% 96%;
+    --popover: 215 28% 10%;
+    --popover-foreground: 210 20% 96%;
+    --primary: 210 20% 98%;
+    --primary-foreground: 215 28% 12%;
+    --secondary: 215 22% 18%;
+    --secondary-foreground: 210 20% 96%;
+    --muted: 215 22% 16%;
+    --muted-foreground: 215 14% 65%;
+    --accent: 22 92% 55%;
+    --accent-foreground: 0 0% 100%;
+    --border: 215 22% 20%;
+    --input: 215 22% 20%;
+    --ring: 22 92% 55%;
   }
 }
 
@@ -99,7 +88,48 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-feature-settings: 'cv11', 'ss01';
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', system-ui, sans-serif;
+    @apply font-bold tracking-tight text-primary;
+  }
+
+  /* Synligt fokus-tillstånd för tangentbordsanvändare */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
+  }
+
+  ::selection {
+    background: hsl(var(--accent) / 0.25);
+  }
+}
+
+@layer components {
+  .container-tight {
+    @apply container max-w-6xl;
+  }
+
+  .section {
+    @apply py-16 md:py-24 scroll-mt-20;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-accent;
+  }
+
+  /* Skip-länk för tillgänglighet */
+  .skip-link {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[100]
+           focus:bg-primary focus:text-primary-foreground focus:px-4 focus:py-2 focus:rounded-md
+           focus:shadow-lg;
   }
 }
